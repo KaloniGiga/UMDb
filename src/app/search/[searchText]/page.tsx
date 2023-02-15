@@ -16,7 +16,7 @@ export default async function Search({params}:any) {
 
     return (
         <div>
-            {results && results.lenght === 0 && (
+            {results && results.length === 0 && (
                 <h1 className="text-center pt-6">No result found</h1>
             )}
 

@@ -15,7 +15,7 @@ export default function NavbarItem({title, param}:Props) {
         const genre = params.get("genre");
 
     return (
-        <Link className={`font-semibold p-2 mx-6 my-3 hover:text-amber-600 ${genre && genre === param && "underline decoration-6 decoration-amber-500 rounded-lg"}`}
+        <Link className={`font-semibold p-2 mx-6 my-3 hover:text-amber-600 ${genre && genre === param && "underline decoration-4  decoration-amber-500 rounded-lg"}`}
         href={`/?genre=${param}`}>{title}</Link>
     )
 }

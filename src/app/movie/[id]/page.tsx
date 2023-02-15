@@ -10,15 +10,19 @@ export default async function MoviePage({params}:any) {
 
      return (
          
-         <div>
+         <div className="w-full">
 
-            <div>
+            <div className="p-4 flex flex-col items-center content-center mx-auto max-w-5xl">
 
                 <Image src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path || movie.poster_path}`}
                      width={500}
                      height={300}
+                     style={{
+                        maxWidth: "100%",
+                        height: "100%"
+                     }}
                      placeholder="blur"
-                     blurDataURL="/spinner.svg"
+                     blurDataURL="/spinner.gif"
                      alt="Movie"
                  ></Image>
 
@@ -27,7 +31,7 @@ export default async function MoviePage({params}:any) {
                         {movie.title || movie.name}
                      </h2>
                      <p className="text-lg mb-3">
-                        <span className="font-semibold">OverView</span>
+                        <span className="font-semibold ">OverView</span>
                          <span>{movie.overview}</span>
                      </p>
 

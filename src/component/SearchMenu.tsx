@@ -15,7 +15,7 @@ function SearchMenu() {
       return ;
     }
 
-    router.push('/search')
+    router.push(`/search/${search}`)
   }
 
 

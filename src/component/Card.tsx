@@ -19,24 +19,35 @@ export interface resultProps {
 export default function Card({result}:resultProps) {
 
     return (
-        <div>
+        <div className="cursor-pointer p-3 hover:shadow-slate-300 shadow-md rounded-lg border-slate-400 m-2 transition-shadow duration-200 group">
             <Link href={`/movie/${result.id}`}>
              
               <Image src={`https://image.tmdb.org/t/p/original/${result.backdrop_path || result.poster_path}`}
                     alt="Image is not available"
                     width={500}
                     height={300}
-                    className="hover:opacity-80"
+                    style={{
+                        maxWidth: "100%",
+                        height: "auto",
+                    }}
+                    placeholder="blur"
+                    blurDataURL="/spinner.gif"
+                    className="hover:opacity-80 rounded-t-lg group-hover:opacity-80"
               ></Image>
-              <div className="p-2">
+              <div className="p-2  ">
 
-                 <p className="text-md">{result.overview}</p>
+                 <p className="line-clamp-2 text-md mb-2">{result.overview}</p>
 
-                 <h2 className="text-lg">{result.title || result.name}</h2>
+                 <h2 className="truncate font-bold text-lg mb-2 ">{result.title || result.name}</h2>
+                  
+                 <p className="flex items-center justify-between">
+                 <span className="font-semibold">{result.release_date || result.first_air_date}</span>
 
-                 <p className="flex items-center">{result.release_date || result.first_air_date}</p>
+                 <span className="flex items-center">
                  <FiThumbsUp size={22} className="mr-1 ml-3" /> 
-                 <span>{result.vote_count}</span>
+                 <span className="ml-3">{result.vote_count}</span>
+                 </span>
+                 </p>
               </div>
             </Link>
         </div>

@@ -20,7 +20,7 @@ export interface Results{
 export default function CardContainer({results}: Results) {
 
     return (
-        <div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mx-auto py-4">
             {results.map((result) => (
                 <Card key={result.id} result={result}/>
             ))}
